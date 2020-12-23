@@ -3,10 +3,10 @@ from flask import Flask
 UPLOAD_FOLDER = 'uploads'
 try:
     import os
-    os.system('mkdir uploads')
+    os.mkdir('uploads')
 except:
     pass
-    
+
 app = Flask(__name__)
 app.secret_key = "secret key"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
