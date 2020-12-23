@@ -26,6 +26,10 @@ def allowed_file(filename):
 def upload_form():
 	return render_template('upload.html')
 
+@app.route('/upload/<filename>')
+def send_image(filename):
+    return send_from_directory("images", filename)
+
 @app.route('/', methods=['POST'])
 def upload_file():
 	if request.method == 'POST':
